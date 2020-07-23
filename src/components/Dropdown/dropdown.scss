@@ -1,0 +1,62 @@
+@import "../../material/styles/typography.scss";
+
+.dropdown-wrapper {
+  position: relative;
+
+  .button-wrapper {
+    margin-bottom: 3px;
+    .button {
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      box-sizing: border-box;
+      border-radius: 3px;
+      color: #4a4a4a;
+      padding: 10px;
+      outline-color: green;
+      width: 100%;
+    }
+    .icon {
+      position: relative;
+      top: 2px;
+      margin-left: 10px;
+      display: flex;
+      float: right;
+    }
+  }
+
+  .list-wrapper {
+    position: absolute;
+    list-style-type: none;
+    background: #e6e6e6;
+    margin-top: unset;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+  }
+
+  .list {
+    margin: 5px;
+    padding: 5px;
+    width: 100%;
+    color: #4a4a4a;
+
+    &:hover {
+      background: gray;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

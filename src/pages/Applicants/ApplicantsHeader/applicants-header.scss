@@ -1,0 +1,18 @@
+@import "../../../material/styles/typography.scss";
+
+.applicants_header_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .applicants-title_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+      color: #4a4a4a;
+      margin-left: 16px;
+    }
+  }
+}

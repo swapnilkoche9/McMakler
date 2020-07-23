@@ -1,0 +1,13 @@
+.card-wrapper {
+  padding: 20px;
+  height: 200px;
+  width: 200px;
+  background: #ffffff;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  &:hover {
+    border-color: green;
+  }
+}

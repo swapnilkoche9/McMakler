@@ -1,0 +1,25 @@
+@import "../../material/styles/typography.scss";
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+
+  .input {
+    padding: 10px 10px 10px 35px;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    color: #9d9d9d;
+    outline-color: green;
+  }
+  .icon {
+    position: absolute;
+    left: 8px;
+    top: 13px;
+
+    svg {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}

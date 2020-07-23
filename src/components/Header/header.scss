@@ -1,0 +1,34 @@
+@import "../../material/styles/typography.scss";
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 40px 0 40px;
+  padding: 5px;
+  height: 70px;
+  align-items: center;
+
+  .icon-groups {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .support-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-logo {
+    margin-left: 36px;
+  }
+}
+.header-icon {
+  margin-left: 38px;
+
+  .contact-support_icon {
+    margin-left: 10px;
+  }
+}
