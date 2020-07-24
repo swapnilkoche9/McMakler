@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
-import { getApplicants } from "../../modules/utils";
-import { Applicants } from "../../dtos/applicants";
+import { getApplicants, groupApplicantsBycategory } from "../../modules/utils";
+import { Applicants, Applicant } from "../../dtos/applicants";
 
 type ApplicantsProviderProps = {
   children: React.ReactNode;
@@ -9,18 +9,26 @@ type ApplicantsProviderProps = {
 export const ApplicantsContext = React.createContext<any>(null);
 
 const ApplicantsProvider: FC<ApplicantsProviderProps> = ({ children }) => {
-  const [applicants, setApplicants] = useState<Applicants | null>();
+  const [applicants, setApplicants] = useState<Applicant[]>([]);
+  const [groupedApplicants, setGroupedApplicants] = useState<
+    Map<string, Applicant[]>
+  >(new Map<string, Applicant[]>());
   const [searchedValue, setSearchedValue] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setIsLoading(true);
-    const data = getApplicants();
-    setApplicants(data);
+    const result = getApplicants();
+    setApplicants(result.data);
+  }, []);
+
+  useEffect(() => {
+    const groupedData = groupApplicantsBycategory(applicants);
+    setGroupedApplicants(groupedData);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
-  }, []);
+    }, 500);
+  }, [applicants]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchedValue(e.target.value);
@@ -30,6 +38,7 @@ const ApplicantsProvider: FC<ApplicantsProviderProps> = ({ children }) => {
     <ApplicantsContext.Provider
       value={{
         applicants,
+        groupedApplicants,
         isLoading,
         handleInputChange,
       }}

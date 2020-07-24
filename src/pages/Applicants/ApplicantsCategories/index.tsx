@@ -4,15 +4,18 @@ import { ApplicantsContext } from "../../../Context/ApplicantsProvider";
 import ApplicantsCategory from "./ApplicantsCategory";
 
 const ApplicantsCategories = () => {
-  const { applicants, isLoading } = React.useContext(ApplicantsContext);
-  const categories = applicants && Object.keys(applicants);
+  const { groupedApplicants, isLoading } = React.useContext(ApplicantsContext);
+  const groupedCategories =
+    groupedApplicants && Array.from(groupedApplicants.entries());
+
   return (
     <div className="applicants-categories_wrapper">
-      {!isLoading && applicants ? (
-        categories.map((category: string) => (
+      {!isLoading && groupedApplicants ? (
+        groupedCategories.map((categoryData: any) => (
           <ApplicantsCategory
-            title="Dummy category"
-            applicantList={applicants[category]}
+            key={categoryData[0]}
+            title={categoryData[0]}
+            applicantList={categoryData[1]}
           />
         ))
       ) : (

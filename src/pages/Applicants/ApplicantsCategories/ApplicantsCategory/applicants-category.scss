@@ -1,4 +1,5 @@
 @import "../../../../material/styles/typography.scss";
+
 .category-title {
   color: #4a4a4a;
   font-weight: bold;
@@ -11,5 +12,53 @@
 
   .applicant-card {
     margin: 24px 24px 24px 0;
+    height: 241px;
+    width: 305px;
+    padding: 20px;
+  }
+}
+
+//card details seperate comp
+
+.card-details_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .short-name {
+    border-radius: 50%;
+    color: red;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 8px;
+  }
+
+  .full-name {
+    color: #4a4a4a;
+  }
+
+  .phone-number {
+    color: #4a4a4a;
+  }
+
+  .email {
+    color: #4a4a4a;
+    margin-bottom: 8px;
+  }
+
+  .date {
+    color: white;
+    background: #9d9d9d;
+    border-radius: 3px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
   }
 }
